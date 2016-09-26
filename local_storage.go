@@ -33,11 +33,11 @@ func newItemNotFoundError(format string, args ...interface{}) ItemNotFoundError 
 	}
 }
 
-// initLocalStorage detects and initializes the localStorage
 func init() {
 	DetectStorage()
 }
 
+// DetectStorage detects and (re)initializes the localStorage.
 func DetectStorage() (ok bool) {
 	defer func() {
 		if r := recover(); r != nil {
